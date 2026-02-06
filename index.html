@@ -1,0 +1,58 @@
+<div class="box">
+  <h2>Cheryl</h2>
+  <p>This felt better as a moment than a message.</p>
+  <h3>Will you be my Valentine?</h3>
+  <button onclick="yes()">Yes</button>
+  <button onclick="no()">No</button>
+</div>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f0f14;
+  color: white;
+  font-family: Georgia, serif;
+  overflow: hidden;
+}
+.box {
+  text-align: center;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+}
+button {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+.yaay {
+  position: absolute;
+  bottom: 20px;
+  animation: float 2s ease forwards;
+}
+@keyframes float {
+  to {
+    transform: translateY(-120px);
+    opacity: 0;
+  }
+}
+function yes() {
+  for (let i = 0; i < 15; i++) {
+    const y = document.createElement("div");
+    y.className = "yaay";
+    y.innerText = "yaay";
+    y.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(y);
+    setTimeout(() => y.remove(), 2000);
+  }
+}
+
+function no() {
+  alert("That option was never real.");
+}
+    
